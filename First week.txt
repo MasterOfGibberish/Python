@@ -1,0 +1,332 @@
+print("Welcome back\n")
+Bill = int(input("What is your bill?\n"))
+Tips = int(input("kiek duosi arbatpinigiu?\n"))
+Members = int(input("kiek mesis chebros?\n"))
+Ans =round((Bill-Tips)/Members,2)
+print("mokesi:",Ans)
+
+//////////////////////////////////////////////
+
+ import random
+#import file_name
+
+random_integer= random.randint(1,10)
+print(random_integer)  
+
+random_float=random.random()
+print(random_float)
+
+#print(file_name.something_from_other_file)
+
+////////////////////////////////////////////////
+
+country_list=["liltva", "latvia", "estio"]
+country_list[0]="Litva"
+print(country_list[0])
+
+country_list.append("ruso")
+print(country_list)
+
+python list editing:
+
+################## https://docs.python.org/3/tutorial/datastructures.html
+
+goodee_country_list=["litva", "latvia", "estio"]
+badee_country_list=["ruso", 'kinio', "amieryko"]
+country_list=[badee_country_list,goodee_country_list]
+print(country_list)
+
+
+/////////////////////////////////////////////////////
+
+import random
+# Split string method
+names_string = input("Give me everybody's names, separated by a comma.\n ")
+names = names_string.split(", ")
+
+#number_items=len(names)
+#random_list=random.randint(0,number_items - 1)
+#print(names[random_list])
+
+person_will_pay=random.choice(names)
+print(person_will_pay)
+
+//////////////////////////////////////
+
+row1 = ["⬜️","⬜️","⬜️"]
+row2 = ["⬜️","⬜️","⬜️"]
+row3 = ["⬜️","⬜️","⬜️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? \n")
+
+if int(position[0]) and int(position[1])>3:
+   print("koordinates nerastos")
+else:
+ horizontal=int(position[0])
+ vertical=int(position[1])
+ selected_row=map[vertical-1]
+ selected_row[horizontal-1]="X"
+ print(f"{row1}\n{row2}\n{row3}")
+
+///////////////////////////////////////
+
+
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+print("lets play rock, paper, scissors game!")
+print("0 represents rock, 1 paper, 2 scissors")
+print("Thus, type from 0 to 2, select and win against computer!\n")
+choice = int(input("your choice...\n"))
+if choice > 2:
+    print("please read the rules!")
+else:
+    if choice == 0:
+        print(rock)
+        print("rock")
+    elif choice == 1:
+        print(paper)
+        print("paper")
+    elif choice == 2:
+        print(scissors)
+        print("scissors")
+      
+        print("Computer's choice is...")  
+    computer_choice = random.randint(0, 2)
+    if computer_choice== 0:
+        print(rock)
+        print("rock")
+    elif computer_choice == 1:
+        print(paper)
+        print("paper")
+    elif computer_choice == 2:
+        print(scissors)
+        print("scissors")
+    if choice == 0 and computer_choice == 2:
+        print("You win!")
+    elif computer_choice == 0 and choice == 2:
+        print("You lose")
+    elif computer_choice > choice:
+        print("You lose")
+    elif choice > computer_choice:
+        print("You win!")
+    elif computer_choice == choice:
+        print("It's a draw")
+////////////////////////////////////////////////////
+
+student_scores = input("Input a list of student scores ").split()
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+print(student_scores)
+highest_number=0
+quantity=1
+for score in student_scores:
+  if score>highest_number:
+    highest_number=score
+    quantity+=quantity
+print(f"the highest number in the array is: {highest_number}")
+print(f"numbers in array:{quantity}")
+
+/////////////////////////////////////////////////////
+
+# #1 pradzia 10 pabaiga, o norint nurodyti how many steps, tai dar trecia pridedam (a,b,c)
+# for number in range(1,10):
+#   print(number)
+
+total=0
+for number in range(1,101):
+  total+=number
+print(total)
+
+
+/////////////////////////////////////////////
+
+total=0
+for number in range(1,101,2):
+  total+=number
+print(f"all sum of add number: {total}") 
+
+total2=0
+for number2 in range(1,101):
+  if number2 %2==0:
+     total2+=number2
+print(total2)
+
+///////////////////////////////////////
+for number in range(1,101):
+  if number % 5==0 and number % 3 ==0:
+     print("fizzBuzz")
+  elif number % 5==0:
+    print("Fizz")
+  elif number % 3 ==0:
+    print("Buzz")
+  else:
+    print(number)
+
+
+////////////////////////////////////////////
+
+#Password Generator Project
+import random
+
+letters = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D',
+    'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+]
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Welcome to the PyPassword Generator!")
+nr_letters = int(input("How many letters would you like in your password?\n"))
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+#Eazy Level - Order not randomised:
+#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
+
+password = ""
+
+for letter in range(1, nr_letters + 1):
+    # letter_computer_choice = random.choice(letters)
+    # password+=letter_computer_choice
+    # print(password)
+    password += random.choice(letters)
+
+for letter in range(1, nr_symbols + 1):
+    password += random.choice(numbers)
+
+for letter in range(1, nr_numbers + 1):
+    password += random.choice(symbols)
+
+print(password)
+
+
+#Hard Level - Order of characters randomised:
+#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+
+
+password_list = []
+
+for letter in range(1, nr_letters + 1):
+    password_list.append(random.choice(letters))
+
+for letter in range(1, nr_symbols + 1):
+    password_list += random.choice(numbers)
+
+for letter in range(1, nr_numbers + 1):
+    password_list += random.choice(symbols)
+
+random.shuffle(password_list)
+
+Hard_password=""
+for char in(password_list):
+  Hard_password+=char
+print(f"Your password is: {Hard_password}")
+
+////////////////////////////////////////////
+
+def my_function():
+  print("holia")
+  print("bgtfrtyguh")
+haha=6
+while haha>=6:
+  my_function()
+  haha+=haha
+
+/////////////////////////////////////////////
+
+#Step 5
+
+import random
+
+#TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
+#Delete this line: word_list = ["ardvark", "baboon", "camel"]
+from hangman_words import word_list
+
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+
+end_of_game = False
+lives = 6
+
+#TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+from hangman_art import logo
+print(logo)
+
+#Testing code
+print(f'Pssst, the solution is {chosen_word}.')
+
+#Create blanks
+display = []
+for _ in range(word_length):
+    display += "_"
+
+while not end_of_game:
+    guess = input("Guess a letter: ").lower()
+
+    #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+    if guess in display:
+        print(f"You've already guessed {guess}")
+
+    #Check guessed letter
+    for position in range(word_length):
+        letter = chosen_word[position]
+        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        if letter == guess:
+            display[position] = letter
+
+    #Check if user is wrong.
+    if guess not in chosen_word:
+        #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        
+        lives -= 1
+        if lives == 0:
+            end_of_game = True
+            print("You lose.")
+
+    #Join all the elements in the list and turn it into a String.
+    print(f"{' '.join(display)}")
+
+    #Check if user has got all letters.
+    if "_" not in display:
+        end_of_game = True
+        print("You win.")
+
+    #TODO-2: - Import the stages from hangman_art.py and make this error go away.
+    from hangman_art import stages
+    print(stages[lives])
+
+////////////////////////////////////////////////////////////
+
+
